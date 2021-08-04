@@ -3,7 +3,7 @@
 
 <br>
 <img src=
-            "./Blockchain1/Blockchain/Blockchain/src/task/BlockChainDemo.gif" 
+            "./Blockchain/Blockchain1/Blockchain/src/task/BlockChainDemo.gif" 
      alt=   "BlockChainDemo" 
      height="338"
 >
