@@ -1,0 +1,171 @@
+JFDML JFormDesigner: "7.0.4.0.360" Java: "11.0.11" encoding: "UTF-8"
+
+new FormModel {
+	contentType: "form/swing"
+	root: new FormRoot {
+		add( new FormWindow( "javax.swing.JFrame", new FormLayoutManager( class java.awt.BorderLayout ) ) {
+			name: "this"
+			"defaultCloseOperation": 2
+			"title": "BLOCKCHAIN DISPLAY"
+			"visible": true
+			add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class java.awt.BorderLayout ) ) {
+				name: "dialogPane"
+				"border": new javax.swing.border.EmptyBorder( 12, 12, 12, 12 )
+				add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
+					"$horizontalGroup": "par l {seq t {space :p:18:p, par t {seq t {space :p:156:p, comp blockDemoLabel:::p:138:p, space s:::p, comp label1:::p::p, space :::p, comp blockNoTextField::::128:x}, seq l {par t {comp timeStampLabel:1::p::p, comp blockIDLabel:1::p:63:p}, space :::p, par l {comp timeStampTextField::::410:x, comp blockIDTextField::::410:x}}, seq l {comp nonceLabel:1::p:60:p, space :p::p, comp nonceTextField::::410:x}, seq {par t {comp hashPrevJLabel:1::p:69:p, comp hashJLabel:1::p:69:p, comp timeJLabel:1::p::p}, space :p::p, par l {comp hashCurrentTextField::::410:x, comp timeToGenerateTextField::::410:x, comp hashPrevTextField::::410:x}}}, space :p::p}}"
+					"$verticalGroup": "par l {seq l {space :p::p, par b {comp blockDemoLabel::b:p::p, comp label1::b:p::p, comp blockNoTextField::b:p::p}, space ::11:x, par b {comp blockIDTextField:2:b:p:31:p, comp blockIDLabel:2:b:p:31:p}, space :::p, par b {comp timeStampTextField::b:p:31:p, comp timeStampLabel::b:p:31:p}, space :p::p, par l {comp nonceTextField:2::p:31:p, comp nonceLabel:2::p:31:p}, space :::p, par l {comp hashPrevTextField:2::p:32:p, comp hashPrevJLabel:2::p:32:p}, space :::p, par t {comp hashJLabel:2::p:31:p, comp hashCurrentTextField:2::p:31:p}, space :p::p, par b {comp timeJLabel:2:b:p:31:p, comp timeToGenerateTextField:2:b:p:31:p}, space :p:60:p}}"
+				} ) {
+					name: "blockNoJPanel"
+					"border": sfield com.jformdesigner.model.FormObject NULL_VALUE
+					add( new FormComponent( "javax.swing.JLabel" ) {
+						name: "blockDemoLabel"
+						"text": "BlockChain Demo"
+						"horizontalAlignment": 0
+						"border": new javax.swing.border.LineBorder( sfield java.awt.Color black, 2, true )
+					} )
+					add( new FormComponent( "javax.swing.JLabel" ) {
+						name: "blockIDLabel"
+						"text": "Block ID"
+						"border": new javax.swing.border.LineBorder( sfield java.awt.Color black, 1, true )
+					} )
+					add( new FormComponent( "javax.swing.JFormattedTextField" ) {
+						name: "blockIDTextField"
+						"border": &LineBorder0 new javax.swing.border.LineBorder( sfield java.awt.Color black, 1, true )
+						"editable": false
+						"columns": 20
+						"horizontalAlignment": 2
+						"componentOrientation": sfield java.awt.ComponentOrientation LEFT_TO_RIGHT
+						"name": "Block ID"
+						"opaque": false
+						addEvent( new FormEvent( "java.beans.PropertyChangeListener", "propertyChange", "textFieldPropertyChange", true, "value" ) )
+					} )
+					add( new FormComponent( "javax.swing.JLabel" ) {
+						name: "timeStampLabel"
+						"text": "TimeStamp"
+						"border": &LineBorder1 new javax.swing.border.LineBorder( sfield java.awt.Color black, 1, true )
+					} )
+					add( new FormComponent( "javax.swing.JFormattedTextField" ) {
+						name: "timeStampTextField"
+						"border": #LineBorder0
+						"editable": false
+						"columns": 20
+						"horizontalAlignment": 2
+						"componentOrientation": sfield java.awt.ComponentOrientation LEFT_TO_RIGHT
+						"name": "Time Stamp"
+						"opaque": false
+						addEvent( new FormEvent( "java.beans.PropertyChangeListener", "propertyChange", "textFieldPropertyChange", true, "value" ) )
+					} )
+					add( new FormComponent( "javax.swing.JLabel" ) {
+						name: "nonceLabel"
+						"text": "Nonce"
+						"border": #LineBorder1
+					} )
+					add( new FormComponent( "javax.swing.JFormattedTextField" ) {
+						name: "nonceTextField"
+						"border": #LineBorder0
+						"editable": false
+						"columns": 20
+						"horizontalAlignment": 2
+						"componentOrientation": sfield java.awt.ComponentOrientation LEFT_TO_RIGHT
+						"name": "Nonce"
+						"opaque": false
+						addEvent( new FormEvent( "java.beans.PropertyChangeListener", "propertyChange", "textFieldPropertyChange", true, "value" ) )
+					} )
+					add( new FormComponent( "javax.swing.JLabel" ) {
+						name: "hashPrevJLabel"
+						"text": "Hash Prev"
+						"border": #LineBorder1
+					} )
+					add( new FormComponent( "javax.swing.JFormattedTextField" ) {
+						name: "hashPrevTextField"
+						"border": #LineBorder0
+						"columns": 20
+						"componentOrientation": sfield java.awt.ComponentOrientation LEFT_TO_RIGHT
+						"name": "Hash Prev"
+						"cursor": new java.awt.Cursor( 2 )
+						"opaque": false
+						addEvent( new FormEvent( "java.beans.PropertyChangeListener", "propertyChange", "textFieldPropertyChange", true, "value" ) )
+					} )
+					add( new FormComponent( "javax.swing.JLabel" ) {
+						name: "hashJLabel"
+						"text": "Hash Curr"
+						"border": #LineBorder1
+					} )
+					add( new FormComponent( "javax.swing.JFormattedTextField" ) {
+						name: "hashCurrentTextField"
+						"border": #LineBorder0
+						"columns": 20
+						"horizontalAlignment": 2
+						"componentOrientation": sfield java.awt.ComponentOrientation LEFT_TO_RIGHT
+						"name": "Hash Curr"
+						"opaque": false
+						addEvent( new FormEvent( "java.beans.PropertyChangeListener", "propertyChange", "textFieldPropertyChange", true, "value" ) )
+					} )
+					add( new FormComponent( "javax.swing.JLabel" ) {
+						name: "timeJLabel"
+						"text": "Time To Gen"
+						"border": #LineBorder1
+					} )
+					add( new FormComponent( "javax.swing.JFormattedTextField" ) {
+						name: "timeToGenerateTextField"
+						"border": #LineBorder0
+						"editable": false
+						"columns": 20
+						"horizontalAlignment": 2
+						"componentOrientation": sfield java.awt.ComponentOrientation LEFT_TO_RIGHT
+						"name": "Time To Gen"
+						"opaque": false
+					} )
+					add( new FormComponent( "javax.swing.JTextField" ) {
+						name: "blockNoTextField"
+						"editable": false
+						"border": new javax.swing.border.LineBorder( sfield java.awt.Color black, 1, true )
+						"background": sfield java.awt.Color lightGray
+					} )
+					add( new FormComponent( "javax.swing.JLabel" ) {
+						name: "label1"
+						"text": "Block #"
+					} )
+				}, new FormLayoutConstraints( class java.lang.String ) {
+					"value": "Center"
+				} )
+				add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
+					"$horizontalGroup": "par l {seq l {space :p:16:p, comp resetChainButton:::p::p, space ::93:x, comp leftButton:::p::p, space :::p, comp rightButton:::p::p, space :p:82:p, comp testBlockButton:::p::p}}"
+					"$verticalGroup": "par l {par b {comp testBlockButton::b:p::p, comp resetChainButton::b:p::p, comp leftButton::b:p::p, comp rightButton::b:p::p}}"
+				} ) {
+					name: "buttonBar"
+					"border": sfield com.jformdesigner.model.FormObject NULL_VALUE
+					add( new FormComponent( "javax.swing.JButton" ) {
+						name: "leftButton"
+						"icon": sfield com.jformdesigner.model.FormObject NULL_VALUE
+						"text": "Left"
+						addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "leftButtonActionPerformed", true ) )
+					} )
+					add( new FormComponent( "javax.swing.JButton" ) {
+						name: "rightButton"
+						"icon": sfield com.jformdesigner.model.FormObject NULL_VALUE
+						"text": "Right"
+						addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "rightButtonActionPerformed", true ) )
+					} )
+					add( new FormComponent( "javax.swing.JButton" ) {
+						name: "testBlockButton"
+						"text": "Test "
+						addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "testBlockButtonActionPerformed", true ) )
+					} )
+					add( new FormComponent( "javax.swing.JButton" ) {
+						name: "resetChainButton"
+						"text": "Reset"
+						addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "resetBlockActionPerformed", true ) )
+					} )
+				}, new FormLayoutConstraints( class java.lang.String ) {
+					"value": "South"
+				} )
+			}, new FormLayoutConstraints( class java.lang.String ) {
+				"value": "Center"
+			} )
+		}, new FormLayoutConstraints( null ) {
+			"location": new java.awt.Point( 0, 0 )
+			"size": new java.awt.Dimension( 535, 410 )
+		} )
+	}
+}
