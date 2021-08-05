@@ -1,16 +1,24 @@
-About GnuPG for Java
-=======================
+# BlockChain Demo - W OLeary
+<body style="background-color:powderblue;">
+<h1 style="background-color:powderblue;">
+Demonstrate a Simplified Block Chain for Learning Purposes
+</h1>
+<p>
+The Previous Hash and Current Hash may be modified. 
+This precipitates as a change in the state of the Block.
+</p>
+<p style = "background-color:aquamarine;">
+Green Indicates a Block which has not been modified by an attacker.
+</p>
+<p style="background-color:tomato;">
+Red conversely Indicates a Block which has been changed and now does
+not pass the Hash Test.
+</p>
+</body>
 
-This is a lib I wrote a couple of years ago. It is a native binding to the
-gpgme library from Werner Koch. It uses JNI. 
-
-gpgpme is the standard library for developing third-party apps on top of GnuPG.
-
-I wrote it for 32-Bit Intel GNU/Linux platforms. Some of my colleagues added
-64-Bit Intel GNU/Linux support. It should run on other Unix-platforms, too. But
-this is not tested. Also I am not aware if it runs with the current version
-of gpgme. It should be easy to add Windows support by compiling a DLL, adding
-this to the jar and extend the loading mechanism to load a DLL on a Windows platform
-instead of loading a .so lib.
-
-
+<br>
+<img src=
+            "/Blockchain1/Blockchain/task/src/blockchain/BlockChainDemo.gif" 
+     alt=   "BlockChainDemo" 
+     height="338"
+>
