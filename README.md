@@ -1,8 +1,8 @@
 # BlockChain Demo - W OLeary
 <body style="background-color:powderblue;">
-<p>
+<h1>
 Demonstrate a Simplified Block Chain for Learning Purposes
-</p>
+</h1>
 <p>
 The Previous Hash and Current Hash may be modified. 
 This precipitates as a change in the state of the Block.
@@ -15,6 +15,7 @@ Red conversely Indicates a Block which has been changed and now does
 not pass the Hash Test.
 </p>
 </body>
+
 <br>
 <img src=
             "/Blockchain1/Blockchain/task/src/blockchain/BlockChainDemo.gif" 
