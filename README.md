@@ -10,7 +10,7 @@ This precipitates as a change in the state of the Block.
 <p style = "background-color:aquamarine">
 Green Indicates a Block which has not been modified by an attacker.
 </p>
-<p style="background-color:tomato;"
+<p style="background-color:tomato;">
 Red conversely Indicates a Block which has been changed and now does
 not pass the Hash Test.
 </p>
