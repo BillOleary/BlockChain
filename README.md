@@ -1,6 +1,6 @@
 # BlockChain Demo - W OLeary
 <body style="background-color:powderblue;">
-<h1>
+<h1 style="background-color:powderblue;">
 Demonstrate a Simplified Block Chain for Learning Purposes
 </h1>
 <p>
