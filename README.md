@@ -3,14 +3,14 @@
 <h1 style="background-color:powderblue;">
 Demonstrate a Simplified Block Chain for Learning Purposes
 </h1>
-<p style="background-color:tomato;">
+<p>
 The Previous Hash and Current Hash may be modified. 
 This precipitates as a change in the state of the Block.
 </p>
-<p>
+<p style = "background-color:aquamarine">
 Green Indicates a Block which has not been modified by an attacker.
 </p>
-<p>
+<p style="background-color:tomato;"
 Red conversely Indicates a Block which has been changed and now does
 not pass the Hash Test.
 </p>
