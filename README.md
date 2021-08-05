@@ -3,7 +3,7 @@
 <h1 style="background-color:powderblue;">
 Demonstrate a Simplified Block Chain for Learning Purposes
 </h1>
-<p>
+<p style="background-color:tomato;">
 The Previous Hash and Current Hash may be modified. 
 This precipitates as a change in the state of the Block.
 </p>
