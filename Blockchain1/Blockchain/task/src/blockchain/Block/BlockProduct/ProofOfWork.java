@@ -15,7 +15,6 @@ public class ProofOfWork implements Serializable {
     public static int getLeadingZeros() {
         System.out.println("Enter how many zeros the hash must start with: ");
         Scanner readIn = new Scanner(System.in);
-        int number;
         do {
             readNumberOfZeros = readIn.nextInt();
         } while (readNumberOfZeros < 0);

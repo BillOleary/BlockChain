@@ -4,18 +4,19 @@
 
 package blockchain.Block.GUI;
 
-import java.awt.event.*;
 import blockchain.Block.BlockProduct.Block;
 import blockchain.Block.BlockProduct.BlockManager;
+
+import javax.swing.*;
+import javax.swing.border.EmptyBorder;
+import javax.swing.border.LineBorder;
+import javax.swing.text.DefaultFormatterFactory;
 import java.awt.*;
+import java.awt.event.ActionEvent;
 import java.beans.PropertyChangeEvent;
 import java.text.ParseException;
-import java.util.*;
 import java.util.List;
-import javax.swing.*;
-import javax.swing.GroupLayout;
-import javax.swing.border.*;
-import javax.swing.text.DefaultFormatterFactory;
+import java.util.*;
 
 /**
  * @author William Oleary

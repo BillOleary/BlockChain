@@ -1,7 +1,8 @@
 package blockchain.Block.HashUtility;
 
 import java.nio.charset.StandardCharsets;
-import java.security.*;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 
 /*
  *   This Class generates a hash for the current Block.

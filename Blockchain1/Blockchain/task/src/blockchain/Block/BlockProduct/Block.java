@@ -5,7 +5,6 @@ import blockchain.Block.HashUtility.StringHash;
 import java.io.Serializable;
 import java.security.NoSuchAlgorithmException;
 import java.security.SecureRandom;
-import java.util.Comparator;
 import java.util.Date;
 
 public class Block implements Serializable, Comparable {
