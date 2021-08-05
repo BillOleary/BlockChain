@@ -1,4 +1,5 @@
 # BlockChain Demo - W OLeary
+<bodystyle="background-color:powderblue;">
 <p>
 Demonstrate a Simplified Block Chain for Learning Purposes
 </p>
@@ -13,7 +14,7 @@ Green Indicates a Block which has not been modified by an attacker.
 Red conversely Indicates a Block which has been changed and now does
 not pass the Hash Test.
 </p>
-
+</body>
 <br>
 <img src=
             "/Blockchain1/Blockchain/task/src/blockchain/BlockChainDemo.gif" 
