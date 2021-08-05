@@ -7,7 +7,7 @@ Demonstrate a Simplified Block Chain for Learning Purposes
 The Previous Hash and Current Hash may be modified. 
 This precipitates as a change in the state of the Block.
 </p>
-<p style = "background-color:aquamarine">
+<p style = "background-color:aquamarine;">
 Green Indicates a Block which has not been modified by an attacker.
 </p>
 <p style="background-color:tomato;">
