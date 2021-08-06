@@ -10,6 +10,8 @@ import blockchain.Block.BlockProduct.BlockManager;
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 import javax.swing.border.LineBorder;
+import javax.swing.event.DocumentEvent;
+import javax.swing.event.DocumentListener;
 import javax.swing.text.DefaultFormatterFactory;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -72,6 +74,9 @@ public class DisplayBlockChain extends JFrame implements BlockObserver {
                     listOfChains.get(currentBlockOnDisplay) :
                     updatedBlocks.get(currentBlockOnDisplay);
             String updatedString = hashMapOfTextFields.get(blockRecordToUpdate).getText();
+            Block previousBlockToAdd = currentBlockOnDisplay - 1 < 0 ?
+                    null :
+                    listOfChains.get(currentBlockOnDisplay - 1);
             //System.out.println("Updated String \u2192 " + updatedString);
 
             switch (blockRecordToUpdate) {
@@ -84,7 +89,7 @@ public class DisplayBlockChain extends JFrame implements BlockObserver {
                             initialBlock.getMagicNumber(),
                             initialBlock.getNumberOfZeros(),
                             initialBlock.getTimeToCalculateBlock(),
-                            listOfChains.get(currentBlockOnDisplay - 1)
+                            previousBlockToAdd
                     ));
                     break;
                 case "Time Stamp":
@@ -97,7 +102,7 @@ public class DisplayBlockChain extends JFrame implements BlockObserver {
                             initialBlock.getMagicNumber(),
                             initialBlock.getNumberOfZeros(),
                             initialBlock.getTimeToCalculateBlock(),
-                            listOfChains.get(currentBlockOnDisplay - 1)
+                            previousBlockToAdd
                     ));
                     break;
                 case "Hash Prev":
@@ -109,7 +114,7 @@ public class DisplayBlockChain extends JFrame implements BlockObserver {
                             initialBlock.getMagicNumber(),
                             initialBlock.getNumberOfZeros(),
                             initialBlock.getTimeToCalculateBlock(),
-                            listOfChains.get(currentBlockOnDisplay - 1)
+                            previousBlockToAdd
                     ));
                     break;
                 case "Hash Curr":
@@ -121,7 +126,7 @@ public class DisplayBlockChain extends JFrame implements BlockObserver {
                             initialBlock.getMagicNumber(),
                             initialBlock.getNumberOfZeros(),
                             initialBlock.getTimeToCalculateBlock(),
-                            listOfChains.get(currentBlockOnDisplay - 1)
+                            previousBlockToAdd
                     ));
                     break;
                 case "Nonce":
@@ -133,7 +138,7 @@ public class DisplayBlockChain extends JFrame implements BlockObserver {
                             Integer.parseInt(updatedString),
                             initialBlock.getNumberOfZeros(),
                             initialBlock.getTimeToCalculateBlock(),
-                            listOfChains.get(currentBlockOnDisplay - 1)
+                            previousBlockToAdd
                     ));
                     break;
                 case "Time To Gen":

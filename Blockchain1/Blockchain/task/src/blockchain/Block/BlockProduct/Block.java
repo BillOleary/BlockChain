@@ -7,7 +7,7 @@ import java.security.NoSuchAlgorithmException;
 import java.security.SecureRandom;
 import java.util.Date;
 
-public class Block implements Serializable, Comparable {
+public class Block implements Serializable, Comparable<Block> {
 
     long serialVersionUID  = SerializableUID.UID.getSerialUID();
     //Create the data fields you want your Block to have
@@ -73,6 +73,7 @@ public class Block implements Serializable, Comparable {
                 magicNumber = SecureRandom.getInstanceStrong().nextInt();
                 currentBlockHash = StringHash.generateBlockHash(stringOfAllFields());
             } while (!blockIsValid());
+            System.out.println(currentBlockHash.length());
             timeToCalculateBlock = (int) ((System.nanoTime() - startTime) / 1_000_000_000);
         } catch (NoSuchAlgorithmException e) {
             e.printStackTrace();
@@ -136,22 +137,26 @@ public class Block implements Serializable, Comparable {
     public boolean blockIsValid() {
         boolean isValidBlock = false;
         //Use the regex to find a string with at least n or more zeros - regex -> 'X{n,}'
-        String regexCheckFor_N_OrMoreZeros = "0{" + getNumberOfZeros() + ",}.+";
-        try {
-            //Compare the correct number of 0's and make sure the current hash for the previous block
-            //matches the previous hash of the current block
-            boolean currentBlockStartZeros = getCurrentBlockHash().matches(regexCheckFor_N_OrMoreZeros);
-            boolean previousBlockStartZeros =
-                    getPreviousBlockHash().matches("0") ||
-                            getPreviousBlockHash().matches("0{" + previousBlock.getNumberOfZeros() + ",}.+");
-            isValidBlock =
-                    currentBlockStartZeros &&
-                            previousBlockStartZeros &&
-                            (previousBlock == null ||
-                            previousBlock.getCurrentBlockHash().compareTo(this.previousBlockHash) == 0);
+        if (this.getCurrentBlockHash().length() == StringHash.getBlockLengthAsString() ||
+                this.previousBlock != null &&
+                this.getPreviousBlockHash().length() == StringHash.getBlockLengthAsString()) {
+            String regexCheckFor_N_OrMoreZeros = "0{" + getNumberOfZeros() + ",}.+";
+            try {
+                //Compare the correct number of 0's and make sure the current hash for the previous block
+                //matches the previous hash of the current block
+                boolean currentBlockStartZeros = getCurrentBlockHash().matches(regexCheckFor_N_OrMoreZeros);
+                boolean previousBlockStartZeros =
+                        getPreviousBlockHash().matches("0") ||
+                                getPreviousBlockHash().matches("0{" + previousBlock.getNumberOfZeros() + ",}.+");
+                isValidBlock =
+                        currentBlockStartZeros &&
+                                previousBlockStartZeros &&
+                                (previousBlock == null ||
+                                        previousBlock.getCurrentBlockHash().compareTo(this.previousBlockHash) == 0);
 
-        } catch (NullPointerException npXception) {
-            npXception.printStackTrace();
+            } catch (NullPointerException npXception) {
+                npXception.printStackTrace();
+            }
         }
         return isValidBlock;
     }
@@ -195,7 +200,7 @@ public class Block implements Serializable, Comparable {
     }
 
     @Override
-    public int compareTo(Object o) {
-        return this.equals(o) ? 0 : -1;
+    public int compareTo(Block block) {
+        return this.equals(block) ? 0 : -1;
     }
 }

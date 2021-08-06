@@ -1,6 +1,7 @@
 package blockchain.Block.HashUtility;
 
 import java.nio.charset.StandardCharsets;
+import java.security.DigestException;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
@@ -10,6 +11,16 @@ import java.security.NoSuchAlgorithmException;
  *
  */
 public class StringHash {
+
+    protected static int blockLengthAsString = 0;
+
+    public static int getBlockLengthAsString() {
+        //If for any reason you get a 0 length digest block - print out msg
+        if (blockLengthAsString == 0) {
+            new DigestException("Digest Length is Not Valid!");
+        }
+        return blockLengthAsString;
+    }
 
     public static String generateBlockHash(String currentBlockString) throws NoSuchAlgorithmException {
 
@@ -27,6 +38,7 @@ public class StringHash {
             }
             hexString.append(hex);
         }
+        blockLengthAsString = hexString.length();
         return hexString.toString();
     }
 }
