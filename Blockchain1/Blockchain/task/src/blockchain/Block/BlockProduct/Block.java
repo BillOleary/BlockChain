@@ -15,13 +15,13 @@ public class Block implements Serializable, Comparable<Block> {
     private long dateTime;                  //Date and Time for the creation of the current Block.
     private String previousBlockHash;       //Hash for the previous Block.
     private String currentBlockHash = "";   //Hash for the current Block.
-    private int magicNumber = 0;            //Cryto Secure Random Number Generator.
+    private int magicNumber = 0;            //Crypto Secure Random Number Generator.
     private Block previousBlock = null;     //A Link to the previous Block.
     //Get the number of 0 prefix values to constrain each hash value.
     private int numberOfZeros;
     private int timeToCalculateBlock = 0;
 
-    //A manual way to create a new block
+    //A manual way to create a single new block
     public Block(int blockId,
                  long dateTime,
                  String previousBlockHash,
@@ -41,6 +41,7 @@ public class Block implements Serializable, Comparable<Block> {
         this.previousBlock = previousBlock;
     }
 
+    //Create a new block given a previous Block
     Block(Block previousBlock) {
         //Set up your Invariants
         // - First Block has a hash of 0
@@ -132,6 +133,11 @@ public class Block implements Serializable, Comparable<Block> {
 
     /*
     * Based on Requirements makes sure the generated Block is valid, i.e. proof of Work is correct.
+    * Test of Validity is based on
+    *  - number of prefix zeros of the previous block.
+    *  - number of prefix zeros of the current block.
+    *  - the current hash of the 'previous' block is the sames and the previous hash of the 'current' block.
+    *  - previous block is NOT Null
     *
      */
     public boolean blockIsValid() {
@@ -140,7 +146,9 @@ public class Block implements Serializable, Comparable<Block> {
         if (this.getCurrentBlockHash().length() == StringHash.getBlockLengthAsString() ||
                 this.previousBlock != null &&
                 this.getPreviousBlockHash().length() == StringHash.getBlockLengthAsString()) {
-            String regexCheckFor_N_OrMoreZeros = "0{" + getNumberOfZeros() + ",}.+";
+            //test for the number of zeros for 'this' block.  This value may be different to the previous block as the
+            //value may be set by the system automatically to adjust the block validity.
+            String regexCheckFor_N_OrMoreZeros = "0{" + this.getNumberOfZeros() + ",}.+";
             try {
                 //Compare the correct number of 0's and make sure the current hash for the previous block
                 //matches the previous hash of the current block

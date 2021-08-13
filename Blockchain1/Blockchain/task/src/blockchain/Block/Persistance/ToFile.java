@@ -16,8 +16,6 @@ public class ToFile implements PersistBlocks {
         try {
             is = new FileOutputStream("out.bin");
 
-            System.out.println("Path of the File \u2192 ");
-
             oos = new ObjectOutputStream(is);
             oos.writeObject(blockList);
 

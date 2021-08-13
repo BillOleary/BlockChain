@@ -29,13 +29,15 @@ public class BlockManager implements Serializable, Subject {
     //Create a List of Block elements which will form our chain
     int blocksSizeToCreate = 0;
     int currentBlockSize = 0;
-    List<Block> blockList = new ArrayList<>();
+    static List<Block> blockList = new ArrayList<>();
     //newest block is the last block to be added
     Block newBlock;
     //Used for recovery of Block Chain data from file on first run.
     boolean fileNotRecovered = true;
     int currentRecoveredListSize;
     List<BlockObserver> listOfBlockObservers = new ArrayList<>();
+
+    File blockDataPersistFile = new File("out.bin");
 
 
     //Generate a UniBLock
@@ -51,14 +53,19 @@ public class BlockManager implements Serializable, Subject {
     public BlockManager(int blocksSizeToCreate) {
         this();     //default constructor
         this.blocksSizeToCreate = blocksSizeToCreate;
+        createTheBlocks(blocksSizeToCreate);
+    }
+
+    public void createTheBlocks(int blocksSizeToCreate) {
         for (int index = 1; index < blocksSizeToCreate; index++) {
             testForNewBlock();
         }
+        this.notifyObservers();
     }
 
     private void testForNewBlock() {
         //If the file with block data exists then load it
-        File blockDataPersistFile = new File("out.bin");
+
         if (fileNotRecovered &&
                 blockDataPersistFile.exists() &&
                 blockDataPersistFile.length() > 0L) {
@@ -67,11 +74,6 @@ public class BlockManager implements Serializable, Subject {
             //will use this when we append the new files to the list
             //Now Print it to Screen
             blockList.forEach(System.out::println);
-            //Now Test the Block to make sure it is valid
-//            System.out.println("BlockChain is Valid \u2192 " +
-//                    blockList.stream().
-//                            map(Block::blockIsValid).
-//                            reduce(true, (a, b) -> a && b));
             fileNotRecovered = false;
         }
 
@@ -100,7 +102,6 @@ public class BlockManager implements Serializable, Subject {
     public void persistBlocks() {
         List<Block> subListToWrite = blockList.stream().skip(currentRecoveredListSize).collect(Collectors.toList());
         new ToFile().persistBlockChain(subListToWrite);
-        blockList.clear();
     }
 
     /*
@@ -136,7 +137,7 @@ public class BlockManager implements Serializable, Subject {
     @Override
     public void notifyObservers() {
         //Send out the iterator of block objects to the GUI
-        //Good practice to send out an iterator rather than
+        //Good practice to send an iterator rather than
         //the crown jewels of block-lists
         for (BlockObserver list : listOfBlockObservers) {
             list.update(blockList.listIterator());

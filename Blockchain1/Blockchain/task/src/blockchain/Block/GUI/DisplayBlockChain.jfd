@@ -5,15 +5,15 @@ new FormModel {
 	root: new FormRoot {
 		add( new FormWindow( "javax.swing.JFrame", new FormLayoutManager( class java.awt.BorderLayout ) ) {
 			name: "this"
-			"defaultCloseOperation": 2
+			"defaultCloseOperation": 0
 			"title": "BLOCKCHAIN DISPLAY"
 			"visible": true
 			add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class java.awt.BorderLayout ) ) {
 				name: "dialogPane"
 				"border": new javax.swing.border.EmptyBorder( 12, 12, 12, 12 )
 				add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
-					"$horizontalGroup": "par l {seq t {space :p:18:p, par t {seq t {space :p:156:p, comp blockDemoLabel:::p:138:p, space s:::p, comp label1:::p::p, space :::p, comp blockNoTextField::::128:x}, seq l {par t {comp timeStampLabel:1::p::p, comp blockIDLabel:1::p:63:p}, space :::p, par l {comp timeStampTextField::::410:x, comp blockIDTextField::::410:x}}, seq l {comp nonceLabel:1::p:60:p, space :p::p, comp nonceTextField::::410:x}, seq {par t {comp hashPrevJLabel:1::p:69:p, comp hashJLabel:1::p:69:p, comp timeJLabel:1::p::p}, space :p::p, par l {comp hashCurrentTextField::::410:x, comp timeToGenerateTextField::::410:x, comp hashPrevTextField::::410:x}}}, space :p::p}}"
-					"$verticalGroup": "par l {seq l {space :p::p, par b {comp blockDemoLabel::b:p::p, comp label1::b:p::p, comp blockNoTextField::b:p::p}, space ::11:x, par b {comp blockIDTextField:2:b:p:31:p, comp blockIDLabel:2:b:p:31:p}, space :::p, par b {comp timeStampTextField::b:p:31:p, comp timeStampLabel::b:p:31:p}, space :p::p, par l {comp nonceTextField:2::p:31:p, comp nonceLabel:2::p:31:p}, space :::p, par l {comp hashPrevTextField:2::p:32:p, comp hashPrevJLabel:2::p:32:p}, space :::p, par t {comp hashJLabel:2::p:31:p, comp hashCurrentTextField:2::p:31:p}, space :p::p, par b {comp timeJLabel:2:b:p:31:p, comp timeToGenerateTextField:2:b:p:31:p}, space :p:60:p}}"
+					"$horizontalGroup": "par l {seq t {space :::p, par l {seq t {par t:::p {comp hashPrevJLabel:4:::81:x, comp hashJLabel:4:t::81:x, comp timeJLabel:4:t::81:x}, space :p::p, par l {comp hashCurrentTextField:5::p:410:p, comp timeToGenerateTextField:5::p:410:p, comp hashPrevTextField:5::p:410:p}}, seq l {comp nonceLabel:4::p:81:p, space :::p, comp nonceTextField:5::p:410:p}, seq l {par t:::p {seq t {comp leftButton:6::p:36:p, space :::p, comp rightButton:6:::0:x}, comp blockIDLabel:4:l::81:x, comp timeStampLabel:4:l::81:x}, par l {seq l {space :::p, par l {comp timeStampTextField:5::p:410:p, comp blockIDTextField:5::p:410:p}}, seq {space :p:87:p, comp blockDemoLabel:::p:138:p, space s:::p, comp label1:::p::p, space :::p, comp blockNoTextField:::::x}}}}, space :p::p}}"
+					"$verticalGroup": "par l {seq l {par l:::p {seq {space :p::p, par b {comp blockDemoLabel::b:p::p, comp label1::b:p::p, comp blockNoTextField::b:p::p}}, comp leftButton:3:l::0:x, comp rightButton:3:l:p:32:p}, space ::10:x, par b {comp blockIDTextField:2:b:p:31:p, comp blockIDLabel:2:b:p:31:p}, space :::p, par b {comp timeStampTextField:2:b:p:31:p, comp timeStampLabel:2:b:p:31:p}, space :p::p, par l {comp nonceTextField:2::p:31:p, comp nonceLabel:2::p:31:p}, space :::p, par l {comp hashPrevTextField:2::p:32:p, comp hashPrevJLabel:2::p:32:p}, space :::p, par t {comp hashCurrentTextField:2::p:31:p, comp hashJLabel:2::p:31:p}, space :p::p, par b {comp timeToGenerateTextField:2:b:p:31:p, comp timeJLabel:2:b:p:31:p}, space :p:60:p}}"
 				} ) {
 					name: "blockNoJPanel"
 					"border": sfield com.jformdesigner.model.FormObject NULL_VALUE
@@ -27,6 +27,8 @@ new FormModel {
 						name: "blockIDLabel"
 						"text": "Block ID"
 						"border": new javax.swing.border.LineBorder( sfield java.awt.Color black, 1, true )
+						"toolTipText": "Current ID For The Block"
+						"componentOrientation": sfield java.awt.ComponentOrientation LEFT_TO_RIGHT
 					} )
 					add( new FormComponent( "javax.swing.JFormattedTextField" ) {
 						name: "blockIDTextField"
@@ -43,6 +45,8 @@ new FormModel {
 						name: "timeStampLabel"
 						"text": "TimeStamp"
 						"border": &LineBorder1 new javax.swing.border.LineBorder( sfield java.awt.Color black, 1, true )
+						"toolTipText": "Time the Block was Generated at."
+						"componentOrientation": sfield java.awt.ComponentOrientation LEFT_TO_RIGHT
 					} )
 					add( new FormComponent( "javax.swing.JFormattedTextField" ) {
 						name: "timeStampTextField"
@@ -59,6 +63,8 @@ new FormModel {
 						name: "nonceLabel"
 						"text": "Nonce"
 						"border": #LineBorder1
+						"toolTipText": "Proof of Work for current Block"
+						"componentOrientation": sfield java.awt.ComponentOrientation LEFT_TO_RIGHT
 					} )
 					add( new FormComponent( "javax.swing.JFormattedTextField" ) {
 						name: "nonceTextField"
@@ -75,6 +81,8 @@ new FormModel {
 						name: "hashPrevJLabel"
 						"text": "Hash Prev"
 						"border": #LineBorder1
+						"toolTipText": "Hash for the previous Block"
+						"componentOrientation": sfield java.awt.ComponentOrientation LEFT_TO_RIGHT
 					} )
 					add( new FormComponent( "javax.swing.JFormattedTextField" ) {
 						name: "hashPrevTextField"
@@ -90,6 +98,8 @@ new FormModel {
 						name: "hashJLabel"
 						"text": "Hash Curr"
 						"border": #LineBorder1
+						"toolTipText": "Hash of the Current Block"
+						"componentOrientation": sfield java.awt.ComponentOrientation LEFT_TO_RIGHT
 					} )
 					add( new FormComponent( "javax.swing.JFormattedTextField" ) {
 						name: "hashCurrentTextField"
@@ -105,6 +115,8 @@ new FormModel {
 						name: "timeJLabel"
 						"text": "Time To Gen"
 						"border": #LineBorder1
+						"toolTipText": "Time taken to validated Block"
+						"componentOrientation": sfield java.awt.ComponentOrientation LEFT_TO_RIGHT
 					} )
 					add( new FormComponent( "javax.swing.JFormattedTextField" ) {
 						name: "timeToGenerateTextField"
@@ -126,27 +138,25 @@ new FormModel {
 						name: "label1"
 						"text": "Block #"
 					} )
-				}, new FormLayoutConstraints( class java.lang.String ) {
-					"value": "Center"
-				} )
-				add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
-					"$horizontalGroup": "par l {seq l {space :p:16:p, comp resetChainButton:::p::p, space ::93:x, comp leftButton:::p::p, space :::p, comp rightButton:::p::p, space :p:82:p, comp testBlockButton:::p::p}}"
-					"$verticalGroup": "par l {par b {comp testBlockButton::b:p::p, comp resetChainButton::b:p::p, comp leftButton::b:p::p, comp rightButton::b:p::p}}"
-				} ) {
-					name: "buttonBar"
-					"border": sfield com.jformdesigner.model.FormObject NULL_VALUE
 					add( new FormComponent( "javax.swing.JButton" ) {
 						name: "leftButton"
-						"icon": sfield com.jformdesigner.model.FormObject NULL_VALUE
-						"text": "Left"
+						"icon": new com.jformdesigner.model.SwingIcon( 1, "D:\\My Stuff\\Software Projects\\Java\\Blockchain1\\Blockchain\\task\\src\\blockchain\\Block\\Icons\\icons8-left-arrow-48.png" )
 						addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "leftButtonActionPerformed", true ) )
 					} )
 					add( new FormComponent( "javax.swing.JButton" ) {
 						name: "rightButton"
-						"icon": sfield com.jformdesigner.model.FormObject NULL_VALUE
-						"text": "Right"
+						"icon": new com.jformdesigner.model.SwingIcon( 1, "D:\\My Stuff\\Software Projects\\Java\\Blockchain1\\Blockchain\\task\\src\\blockchain\\Block\\Icons\\icons8-right-arrow-48.png" )
 						addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "rightButtonActionPerformed", true ) )
 					} )
+				}, new FormLayoutConstraints( class java.lang.String ) {
+					"value": "Center"
+				} )
+				add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
+					"$horizontalGroup": "par l {seq l {space :p:16:p, comp resetChainButton:::p::p, space :p:98:p, comp blocksToGenerateSpinner:::p:73:p, space :::p, comp generateBlockButton:::p::p, space ::78:x, comp testBlockButton:::p::p}}"
+					"$verticalGroup": "par l {par b {comp testBlockButton::b:p::p, comp resetChainButton::b:p::p, comp generateBlockButton::b:p::p, comp blocksToGenerateSpinner::b:p::p}}"
+				} ) {
+					name: "buttonBar"
+					"border": sfield com.jformdesigner.model.FormObject NULL_VALUE
 					add( new FormComponent( "javax.swing.JButton" ) {
 						name: "testBlockButton"
 						"text": "Test "
@@ -156,6 +166,19 @@ new FormModel {
 						name: "resetChainButton"
 						"text": "Reset"
 						addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "resetBlockActionPerformed", true ) )
+					} )
+					add( new FormComponent( "javax.swing.JButton" ) {
+						name: "generateBlockButton"
+						"text": "Generate"
+						addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "generateBlockButtonActionPerformed", true ) )
+					} )
+					add( new FormComponent( "javax.swing.JSpinner" ) {
+						name: "blocksToGenerateSpinner"
+						"border": new javax.swing.border.LineBorder( sfield java.awt.Color black, 1, true )
+						"model": new javax.swing.SpinnerNumberModel {
+							minimum: 0
+							value: 5
+						}
 					} )
 				}, new FormLayoutConstraints( class java.lang.String ) {
 					"value": "South"
